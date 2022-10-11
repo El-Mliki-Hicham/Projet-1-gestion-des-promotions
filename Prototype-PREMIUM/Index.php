@@ -11,6 +11,10 @@ $GetData =  $PromoManager->GetAllData();
 
 ?>
 
+
+
+<input type="text" id="search">
+<div id="showS"></div>
 <table class="table">
   <thead>
     <tr>
@@ -35,3 +39,25 @@ $GetData =  $PromoManager->GetAllData();
 </table>
 
 <a href="AddData.php">ajouter</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#search').keyup(function(){
+      var input = $(this).val();
+      // alert(input);
+
+      if (input !='') {
+        $.ajax({
+          url:"search.php",
+          method:"POST",
+          data:{input:input},
+          success:function (data){
+            $('#showS').html(data);
+          }
+        })
+        
+      }
+    })
+  })
+</script>
