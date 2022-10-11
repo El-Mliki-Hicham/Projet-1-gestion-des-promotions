@@ -28,6 +28,12 @@ class PromoBLL{
       return $this->PromoManager->Edit($id);
 
    }
+   function UpdataData($id,$name){
+
+      return $this->PromoManager->UpdataData($id,$name);
+
+   }
+
 
 }
 

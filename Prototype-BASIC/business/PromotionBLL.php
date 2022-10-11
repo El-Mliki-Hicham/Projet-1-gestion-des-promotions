@@ -24,12 +24,7 @@ class PromoBLL{
 
     }
     
-    function UpdataData($id,$name){
-
-       return $this->PromoManager->UpdataData($id,$name);
-
-    }
-
+ 
 }
 
 ?>
