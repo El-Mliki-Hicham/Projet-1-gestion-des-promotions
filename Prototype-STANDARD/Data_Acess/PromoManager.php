@@ -56,6 +56,12 @@ public function UpdataData($id,$name) {
     mysqli_query(getConnection(),$RowUpdate);
 
 }
+public function Delete($id){
+    $DeleteRow = "DELETE  FROM promotion where id = $id";
+    mysqli_query(getConnection(),$DeleteRow);
+
+
+}
 
 }
 
