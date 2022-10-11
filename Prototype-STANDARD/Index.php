@@ -16,6 +16,7 @@ $GetData =  $PromoManager->GetAllData();
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,10 @@ $GetData =  $PromoManager->GetAllData();
         ?>
       <td> <?php echo $value->GetId() ?></td>
       <td> <?php echo $value->getName() ?></td>
+      <td>
+                    <a href="Edit.php?id=<?php echo $value->getId() ?>">Edit</a>
+                    <a href="Delete.php?id=<?php echo $value->getId() ?>">Delete</a>
+          </td>
      
      
     </tr>

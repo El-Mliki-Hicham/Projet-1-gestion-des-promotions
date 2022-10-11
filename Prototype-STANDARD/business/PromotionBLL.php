@@ -23,6 +23,11 @@ class PromoBLL{
        return $this->PromoManager->AddData($Promo);
 
     }
+    function EditData($id){
+
+      return $this->PromoManager->Edit($id);
+
+   }
 
 }
 
