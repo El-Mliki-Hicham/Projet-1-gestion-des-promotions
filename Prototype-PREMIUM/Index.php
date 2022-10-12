@@ -30,7 +30,7 @@ $PromoManager = new PromoBLL();
 
       if (input !=' ') {
         $.ajax({
-          url:"search.php",
+          url:"Data_Acess/search.php",
           method:"POST",
           data:{input:input},
           success:function (data){

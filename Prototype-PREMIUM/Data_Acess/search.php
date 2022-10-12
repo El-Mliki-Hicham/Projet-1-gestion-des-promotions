@@ -1,6 +1,6 @@
 <?php
 
-include 'Data_Acess/ConnectionDB.php';
+include 'ConnectionDB.php';
 if(isset($_POST['input'])){
 
 $input = $_POST['input'];
