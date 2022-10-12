@@ -1,6 +1,6 @@
 <?php
 
-include ("Data_Acess/PromoManager.php");
+include ("Data_Acess/PromoAD.php");
 
 
 class PromoBLL{
@@ -23,8 +23,23 @@ class PromoBLL{
        return $this->PromoManager->AddData($Promo);
 
     }
-    
- 
+    function EditData($id){
+
+      return $this->PromoManager->Edit($id);
+
+   }
+   function UpdataData($id,$name){
+
+      return $this->PromoManager->UpdataData($id,$name);
+
+   }
+   function DeleteData($id){
+
+      return $this->PromoManager->delete($id);
+
+   }
+
+
 }
 
 ?>

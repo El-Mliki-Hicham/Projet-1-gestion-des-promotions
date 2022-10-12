@@ -4,6 +4,10 @@
 include "business/PromotionBLL.php";
 $PromoManager = new PromoBLL();
 
+
+        $GetData =  $PromoManager->GetAllData();
+        
+   
 // if (isset($_POST['input'])) {
 //   # code...
 //   $GetData =  $PromoManager->GetAllData();
@@ -24,7 +28,7 @@ $PromoManager = new PromoBLL();
       var input = $(this).val();
       // alert(input);
 
-      if (input !='') {
+      if (input !=' ') {
         $.ajax({
           url:"search.php",
           method:"POST",
@@ -32,15 +36,12 @@ $PromoManager = new PromoBLL();
           success:function (data){
             $('#showS').html(data);
           }
-        })
+        });
         
-      }{<?php
-        $GetData =  $PromoManager->GetAllData();
-        ?>
       }
      
-    })
-  })
+    });
+  });
 </script>
 <form action="" method="POST">
 <input type="text" id="search" name="input" >
@@ -62,7 +63,10 @@ $PromoManager = new PromoBLL();
         ?>
       <td> <?php echo $value->GetId() ?></td>
       <td> <?php echo $value->getName() ?></td>
-     
+      <td>
+                    <a href="Edit.php?id=<?php echo $value->getId() ?>">Edit</a>
+                    <a href="Delete.php?id=<?php echo $value->getId() ?>">Delete</a>
+          </td>
      
     </tr>
 <?php }?>

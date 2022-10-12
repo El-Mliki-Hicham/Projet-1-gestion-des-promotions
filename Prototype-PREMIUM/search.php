@@ -13,10 +13,18 @@ if(mysqli_num_rows($result)>0){
 
  
     
-        <?php while(  $value = mysqli_fetch_assoc($result) ){ ?>
+        <?php while(  $value = mysqli_fetch_assoc($result) ){ 
+            $id =$value['Id'];
+            $name =$value['Name_Promotion'];
+            ?>
+
         <tr>
-            <td><?php echo $value['Id'] ?></td>
-            <td><?php echo $value['Name_Promotion'] ?></td>
+            <td><?php echo $id ?></td>
+            <td><?php echo $name  ?></td>
+            <td>
+                    <a href="Edit.php?id=<?php echo $id?>">Edit</a>
+                    <a href="Delete.php?id=<?php echo $id ?>">Delete</a>
+          </td>
         </tr>
     
 
