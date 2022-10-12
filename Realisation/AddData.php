@@ -1,6 +1,3 @@
-
-
-
 <?php
 
 include "business/PromotionBLL.php";
@@ -11,16 +8,44 @@ if(!empty($_POST)){
 	$Promo->setName($_POST['Name']);
     
     $GetData =  $PromoManager->AddData($Promo);
-	
-	// Redirection vers la page index.phpnpn
 	header("Location: index.php");
 }
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap Table with Add and Delete Row Feature</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/forms.css">
+	<script src="assets/js/script.js"></script>
 
-<form method="Post">
-<input type="text" name="Name">
-<button>ajouter</button>
-</form>
+	<style>
+
+	</style>
+
+</head>
+
+<div class="container cadre">
+	<div class=" text-center">
+		<form class="form-inline justify-content-center form" method="POST">
+			<h1 class="title">Ajouter promotion</h1>
+			<div class="form-group mx-sm-3 mb-2 input">
+				<label for="input" class="sr-only">Name poromotion</label>
+				Nom de la poromotion <input name="Name" type="text" class="form-control " placeholder="Name poromotion">
+				<button class=" btn btn-info  ">Envoyer</button>
+			</div>
+		</form>
+
+	</div>
+</div>
