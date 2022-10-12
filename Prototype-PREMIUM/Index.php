@@ -3,42 +3,19 @@
 // include 'Data_Acess/PromoManager.php';
 include "business/PromotionBLL.php";
 $PromoManager = new PromoBLL();
-$GetData =  $PromoManager->GetAllData();
+
+// if (isset($_POST['input'])) {
+//   # code...
+//   $GetData =  $PromoManager->GetAllData();
+// }else {
+//   $GetData = null;
+// }
 
 
 
 
 
 ?>
-
-
-
-<input type="text" id="search">
-<div id="showS"></div>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <?php 
-        foreach($GetData as $value){
-          
-       
-        ?>
-      <td> <?php echo $value->GetId() ?></td>
-      <td> <?php echo $value->getName() ?></td>
-     
-     
-    </tr>
-<?php }?>
-  </tbody>
-</table>
-
-<a href="AddData.php">ajouter</a>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
@@ -57,7 +34,40 @@ $GetData =  $PromoManager->GetAllData();
           }
         })
         
+      }{<?php
+        $GetData =  $PromoManager->GetAllData();
+        ?>
       }
+     
     })
   })
 </script>
+<form action="" method="POST">
+<input type="text" id="search" name="input" >
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody id="showS">
+    <tr>
+        <?php 
+        foreach($GetData as $value){
+          
+       
+        ?>
+      <td> <?php echo $value->GetId() ?></td>
+      <td> <?php echo $value->getName() ?></td>
+     
+     
+    </tr>
+<?php }?>
+  </tbody>
+</table>
+
+<a href="AddData.php">ajouter</a>
+
