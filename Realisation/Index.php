@@ -1,3 +1,28 @@
+<?php 
+
+// include 'Data_Acess/PromoManager.php';
+include "business/PromotionBLL.php";
+$PromoManager = new PromoBLL();
+
+
+        $GetData =  $PromoManager->GetAllData();
+        
+   
+// if (isset($_POST['input'])) {
+//   # code...
+//   $GetData =  $PromoManager->GetAllData();
+// }else {
+//   $GetData = null;
+// }
+
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,26 +79,7 @@
                             <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Peter Parker</td>
-                        <td>Customer Service</td>
-                        <td>(313) 555-5735</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fran Wilson</td>
-                        <td>Human Resources</td>
-                        <td>(503) 555-9931</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>      
+                 
                 </tbody>
             </table>
         </div>
@@ -81,3 +87,59 @@
 </body>
 </html>
 <script src="assets/css/style.css"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#search').keyup(function(){
+      var input = $(this).val();
+      // alert(input);
+
+      if (input !=' ') {
+        $.ajax({
+          url:"Data_Acess/search.php",
+          method:"POST",
+          data:{input:input},
+          success:function (data){
+            $('#showS').html(data);
+          }
+        });
+        
+      }
+     
+    });
+  });
+</script>
+<form action="" method="POST">
+<input type="text" id="search" name="input" >
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody id="showS">
+    <tr>
+        <?php 
+        foreach($GetData as $value){
+          
+       
+        ?>
+      <td> <?php echo $value->GetId() ?></td>
+      <td> <?php echo $value->getName() ?></td>
+      <td>
+                    <a href="Edit.php?id=<?php echo $value->getId() ?>">Edit</a>
+                    <a href="Delete.php?id=<?php echo $value->getId() ?>">Delete</a>
+          </td>
+     
+    </tr>
+<?php }?>
+  </tbody>
+</table>
+
+<a href="AddData.php">ajouter</a>
+
