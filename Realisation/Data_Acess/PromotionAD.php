@@ -1,21 +1,30 @@
 <?php 
 
-include 'Promo.php';
-include 'ConnectionDB.php';
+include 'Promotion.php';
+class PromotionAD {
 
-class PromoManager {
     
+
+
+    function GetConnection(){
+
+        $connection = mysqli_connect("localhost",'root','','gestion_promotion');
+    
+    return $connection;
+    }
+    
+
 public function GetData(){
 
     $selectRow = "SELECT * from promotion";
-    $Query = mysqli_query(GetConnection(),$selectRow);
+    $Query = mysqli_query($this->GetConnection(),$selectRow);
     $GetData = mysqli_fetch_all($Query,MYSQLI_ASSOC);
     $array= array(); 
     foreach ($GetData as $value){
-        $promo = new Promo();    
-        $promo->SetId($value['Id']);
-        $promo->SetName($value['Name_Promotion']);
-        array_push($array,$promo);
+        $promotion = new Promotion();    
+        $promotion->SetId($value['Id']);
+        $promotion->SetName($value['Name_Promotion']);
+        array_push($array,$promotion);
     }
     
     return $array ;
@@ -23,27 +32,27 @@ public function GetData(){
 
 function Edit($id){
     $SelectRowId = "SELECT * FROM promotion WHERE id=$id";
-    $Query = mysqli_query(GetConnection(),$SelectRowId);
+    $Query = mysqli_query($this->GetConnection(),$SelectRowId);
     $GetData = mysqli_fetch_all($Query,MYSQLI_ASSOC);
    
     foreach ($GetData as $value){
-    $promo = new Promo();
-    $promo->SetId($value['Id']);
-    $promo->SetName($value['Name_Promotion']);
+    $promotion = new Promotion();
+    $promotion->SetId($value['Id']);
+    $promotion->SetName($value['Name_Promotion']);
    
     }
     
-    return $promo ;
+    return $promotion ;
 }
 
-public function AddData($Promo){
+public function AddData($Promotion){
     
-    $Name =$Promo->getName();    
+    $Name =$Promotion->getName();    
     
     $insertRow="INSERT INTO promotion(Name_Promotion) 
 VALUES( '$Name')";
 
-mysqli_query(getConnection(), $insertRow);
+mysqli_query($this->GetConnection(), $insertRow);
 
 }
 
@@ -53,12 +62,12 @@ public function UpdataData($id,$name) {
     Name_Promotion='$name'
     WHERE id=$id";
 
-    mysqli_query(getConnection(),$RowUpdate);
+    mysqli_query($this->GetConnection(),$RowUpdate);
 
 }
 public function Delete($id){
     $DeleteRow = "DELETE  FROM promotion where id = $id";
-    mysqli_query(getConnection(),$DeleteRow);
+    mysqli_query($this->GetConnection(),$DeleteRow);
 
 
 }

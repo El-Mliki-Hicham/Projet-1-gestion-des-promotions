@@ -1,7 +1,7 @@
 <?php 
 include "business/PromotionBLL.php";
-$PromoManager = new PromoBLL();
- $GetData =  $PromoManager->GetAllData();       
+$PromotionBLL = new PromotionBLL();
+ $GetData =  $PromotionBLL->GetAllData();       
 ?>
 
 

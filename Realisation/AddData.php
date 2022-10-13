@@ -1,13 +1,13 @@
 <?php
 
 include "business/PromotionBLL.php";
-$PromoManager = new PromoBLL();
+$PromotionBLL = new PromotionBLL();
 if(!empty($_POST)){
 
-    $Promo = new Promo();
-	$Promo->setName($_POST['Name']);
+    $Promotion = new Promotion();
+	$Promotion->setName($_POST['Name']);
     
-    $GetData =  $PromoManager->AddData($Promo);
+    $GetData =  $PromotionBLL->AddData($Promo);
 	header("Location: index.php");
 }
 

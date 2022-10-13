@@ -1,5 +1,5 @@
 <?php 
- class Promo {
+ class Promotion {
   
    private $Id;
     private $Name;
@@ -7,6 +7,7 @@
 public function getId() {
    return $this->Id;
 }
+
 public function setId($id) {
    $this->Id = $id;
 }

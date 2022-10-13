@@ -1,10 +1,10 @@
 <?php
 include "business/PromotionBLL.php";
-$promoBLL = new PromoBLL();
+$PromotionBLL = new PromotionBLL();
 // include "Data_Acess/PromoManager.php";
 // $Promo = new PromoManager;
 if(isset($_GET['id'])){
-   $Data = $promoBLL->EditData($_GET['id']);
+   $Data = $PromotionBLL->EditData($_GET['id']);
 }
 if(!empty($_POST)){
 $id=$_POST['id'];

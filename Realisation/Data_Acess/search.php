@@ -1,12 +1,13 @@
 <?php
 
 include 'ConnectionDB.php';
-if(isset($_POST['input'])){
+if(isset($_POST['key'])){
 
-$input = $_POST['input'];
-$query= "SELECT * FROM promotion where Name_Promotion  like '{$input}%'  ";
+$input = $_POST['key'];
+$query= "SELECT * FROM promotion where Name_Promotion like '{$input}%'";
 $result = mysqli_query(getConnection(), $query);
-
+// $data =  mysqli_fetch_assoc($result);
+// 
 if(mysqli_num_rows($result)>0){
 ?>
 
@@ -21,9 +22,9 @@ if(mysqli_num_rows($result)>0){
             <td><?php echo $id ?></td>
             <td><?php echo $name  ?></td>
             <td>
-              <a class="edit" title="Edit" data-toggle="tooltip" href="Edit.php?id=<?php echo $id ?>"><i class="material-icons">&#xE254;</i></a>
-              <a class="delete" title="Delete" data-toggle="tooltip"  href="Delete.php?id=<?php echo $id ?>"><i class="material-icons">&#xE872;</i></a>
-            </td>
+                    <a href="Edit.php?id=<?php echo $id?>">Edit</a>
+                    <a href="Delete.php?id=<?php echo $id ?>">Delete</a>
+          </td>
         </tr>
     
 

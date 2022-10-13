@@ -2,11 +2,11 @@
 
 include "business/PromotionBLL.php";
 
-$PromoBLL = new PromoBLL();
+$PromotionBLL = new PromotionBLL();
 
 if(isset($_GET["id"])){
    $id = $_GET["id"];
-    $PromoBLL->DeleteData($id);
+    $PromotionBLL->DeleteData($id);
     header("Location:index.php");
 }
 
