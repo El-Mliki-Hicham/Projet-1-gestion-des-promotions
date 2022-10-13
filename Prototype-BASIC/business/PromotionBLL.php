@@ -3,24 +3,24 @@
 include ("Data_Acess/PromotionAD.php");
 
 
-class PromoBLL{
+class PromotionBLL{
 
-    private $PromoManager = null ;
+    private $PromotionAD = null ;
     public  function __construct()
     {
-       $this->PromoManager = new PromoManager();
+       $this->PromotionAD = new PromotionAD();
     
     }
 
 
     function GetAllData(){
 
-       return $this->PromoManager->GetData();
+       return $this->PromotionAD->GetData();
 
     }
     function AddData($Promo){
 
-       return $this->PromoManager->AddData($Promo);
+       return $this->PromotionAD->AddData($Promo);
 
     }
     
