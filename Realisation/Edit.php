@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
 if(!empty($_POST)){
 $id=$_POST['id'];
 $name=$_POST['name'];
-$promoBLL->UpdataData($id,$name);
+$PromotionBLL->UpdataData($id,$name);
 
 header("Location:index.php");
 

@@ -7,7 +7,7 @@ if(!empty($_POST)){
     $Promotion = new Promotion();
 	$Promotion->setName($_POST['Name']);
     
-    $GetData =  $PromotionBLL->AddData($Promo);
+    $GetData =  $PromotionBLL->AddData($Promotion);
 	header("Location: index.php");
 }
 
