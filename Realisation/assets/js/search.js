@@ -3,7 +3,7 @@ $(document).ready(function () {
       var input = $(this).val();
       // alert(input);
 
-      if (input != ' ') {
+      if (input != " ") {
         $.ajax({
           url: "Data_Acess/search.php",
           method: "POST",
