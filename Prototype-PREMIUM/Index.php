@@ -2,22 +2,11 @@
 
 // include 'Data_Acess/PromoManager.php';
 include "business/PromotionBLL.php";
-$PromoManager = new PromoBLL();
+$PromotionBLL = new PromotionBLL();
 
 
-        $GetData =  $PromoManager->GetAllData();
+     $GetData =  $PromotionBLL->GetAllData();
         
-   
-// if (isset($_POST['input'])) {
-//   # code...
-//   $GetData =  $PromoManager->GetAllData();
-// }else {
-//   $GetData = null;
-// }
-
-
-
-
 
 ?>
 

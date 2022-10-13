@@ -1,15 +1,15 @@
 <?php
 include "business/PromotionBLL.php";
-$promoBLL = new PromoBLL();
+$promotionBLL = new PromotionBLL();
 // include "Data_Acess/PromoManager.php";
 // $Promo = new PromoManager;
 if(isset($_GET['id'])){
-   $Data = $promoBLL->EditData($_GET['id']);
+   $Data = $promotionBLL->EditData($_GET['id']);
 }
 if(!empty($_POST)){
 $id=$_POST['id'];
 $name=$_POST['name'];
-$promoBLL->UpdataData($id,$name);
+$promotionBLL->UpdataData($id,$name);
 
 header("Location:index.php");
 
