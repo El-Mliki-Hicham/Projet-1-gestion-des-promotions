@@ -1,6 +1,6 @@
 <?php 
 
-include 'Promo.php';
+include 'Promotion.php';
 include 'ConnectionDB.php';
 
 class PromoManager {
