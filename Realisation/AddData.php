@@ -42,7 +42,7 @@ if(!empty($_POST)){
 			<h1 class="title">Ajouter promotion</h1>
 			<div class="form-group mx-sm-3 mb-2 input">
 				<label for="input" class="sr-only">Name poromotion</label>
-				Nom de la poromotion <input name="Name" type="text" class="form-control " placeholder="Name poromotion">
+				Nom de la poromotion <input name="Name" required type="text" class="form-control " placeholder="Name poromotion">
 				<button class=" btn btn-info  ">Envoyer</button>
 			</div>
 		</form>

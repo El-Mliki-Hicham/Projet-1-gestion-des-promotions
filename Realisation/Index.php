@@ -46,7 +46,7 @@ $PromotionBLL = new PromotionBLL();
 
             <div class="search-box">
               <i class="material-icons">&#xE8B6;</i>
-              <input id="search" name="input" class="form-control" placeholder="Search&hellip;">
+              <input id="search" name="input" class="form-control"  placeholder="Search&hellip;">
 
             </div>
           </div>
