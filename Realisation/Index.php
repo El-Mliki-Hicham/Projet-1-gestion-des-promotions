@@ -36,7 +36,7 @@ $PromotionBLL = new PromotionBLL();
             <h2>Gestion des promotions <b>
               <a  href="AddData.php">
                 <button type="button" class="btn btn-info add-new">
-                  <i class="fa fa-plus"></i> Add New</button>
+                  <i class="fa fa-plus"></i> Ajouter </button>
               </b>
               </a>
             </h2>
@@ -46,7 +46,7 @@ $PromotionBLL = new PromotionBLL();
 
             <div class="search-box">
               <i class="material-icons">&#xE8B6;</i>
-              <input id="search" name="input" class="form-control"  placeholder="Search&hellip;">
+              <input id="search" name="input" class="form-control"  placeholder="Recherche&hellip;">
 
             </div>
           </div>

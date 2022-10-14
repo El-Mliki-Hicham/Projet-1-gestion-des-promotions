@@ -41,8 +41,8 @@ if(!empty($_POST)){
 		<form class="form-inline justify-content-center form" method="POST">
 			<h1 class="title">Ajouter promotion</h1>
 			<div class="form-group mx-sm-3 mb-2 input">
-				<label for="input" class="sr-only">Name poromotion</label>
-				Nom de la poromotion <input name="Name" required type="text" class="form-control " placeholder="Name poromotion">
+				<label for="input" class="sr-only">Nom poromotion</label>
+				Nom de la poromotion <input name="Name" required type="text" class="form-control " placeholder="Nom poromotion">
 				<button class=" btn btn-info  ">Envoyer</button>
 			</div>
 		</form>

@@ -47,7 +47,7 @@ header("Location:index.php");
 <form class="form-inline justify-content-center form" method="POST">
    <h1 class="title">Modifier promotion</h1>
    <div class="form-group mx-sm-3 mb-2 input">
-      <label for="input" class="sr-only">Name poromotion</label>
+      <label for="input" class="sr-only">Nom poromotion</label>
       <input type="hidden" value=<?php echo $Data->getId()?> name="id">
       Nom de la poromotion <input type="text" value=<?php echo $Data->getName()?> name="name">
       <button class=" btn btn-info  ">Envoyer</button>
